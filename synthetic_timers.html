@@ -1,0 +1,19 @@
+<html>
+
+<body>
+    <br>
+    # disable synthetic timers from video<br>
+    bcdedit /set useplatformtick yes<br>
+    <br>
+    # disable synthetic timers from internet<br>
+    bcdedit /set useplatformclock true<br>
+    <br>
+    # Disable HPET<br>
+    bcdedit /deletevalue useplatformclock<br>
+    <br>
+    # Disable hypervisor<br>
+    bcdedit /set hypervisorlaunchtype off<br>
+    <br>
+</body>
+
+</html>

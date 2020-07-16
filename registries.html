@@ -1,0 +1,79 @@
+<html>
+
+
+<body>
+
+    <br><br>Windows Registry Editor Version 5.00
+
+    <br><br>; Disable UAC
+
+    <br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+    <br>"EnableLUA"=dword:00000000
+
+
+    <br><br>; Turn off microsoft consumer experiences (GPEDIT)
+    <br><br>; Disables app suggestions on start
+
+    <br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent]
+    <br>"DisableWindowsConsumerFeatures"=dword:00000001
+
+
+    <br><br>; Network throttling
+    <br><br>; System responsiveness
+
+    <br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile]
+    <br>"NetworkThrottlingIndex"=dword:ffffffff
+    <br>"SystemResponsiveness"=dword:00000000
+
+
+    <br><br>; Disable automatic maintenance
+
+    <br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance]
+    <br>"MaintenanceDisabled"=dword:00000001
+
+
+    <br><br>; Disable power throttling
+
+    <br><br>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerThrottling]
+    <br>"PowerThrottlingOff"=dword:00000001
+
+
+    <br><br>; Disable spectre and meltdown
+
+    <br><br>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management]
+    <br>"FeatureSettingsOverride"=dword:00000003
+    <br>"FeatureSettingsOverrideMask"=dword:00000003
+
+
+    <br><br>; Processor scheduling
+
+    <br><br>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl]
+    <br>"Win32PrioritySeparation"=dword:00000026
+
+
+    <br><br>; Games scheduling
+
+    <br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks\Games]
+    <br>"Affinity"=dword:00000000
+    <br>"Background Only"="False"
+    <br>"Clock Rate"=dword:00002710
+    <br>"GPU Priority"=dword:00000008
+    <br>"Priority"=dword:00000006
+    <br>"Scheduling Category"="High"
+    <br>"SFIO Priority"="High"
+
+
+    <br><br>; System properties - performance options - custom
+
+    <br><br>[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects]
+    <br>"VisualFXSetting"=dword:00000002
+
+
+    <br><br>; Menu show delay
+
+    <br><br>[HKEY_CURRENT_USER\Control Panel\Desktop]
+    <br>"MenuShowDelay"="0"
+
+</body>
+
+</html>
